@@ -1,0 +1,63 @@
+Pseudocódigo – Sistema CRUD – Clínica
+1. Cadastro de Paciente
+INÍCIO
+  RECEBER do formulário:
+      nome
+      telefone
+      endereço
+      data_nascimento
+
+  CONECTAR ao banco
+
+  EXECUTAR INSERT na tabela pacientes
+
+  SE inserção for realizada
+        EXIBIR "Paciente cadastrado com sucesso"
+  SENÃO
+        EXIBIR "Erro ao cadastrar paciente"
+FIM
+
+2. Listagem de Pacientes
+INÍCIO
+  CONECTAR ao banco
+  EXECUTAR SELECT * FROM pacientes
+
+  PARA cada registro encontrado
+      EXIBIR dados na tabela HTML
+  FIM PARA
+FIM
+
+3. Editar Paciente
+INÍCIO
+  RECEBER id_paciente
+
+  CONECTAR ao banco
+  EXECUTAR SELECT WHERE id = id_paciente
+
+  EXIBIR os dados atuais no formulário
+
+  APÓS EDIÇÃO:
+        EXECUTAR UPDATE com novos dados
+FIM
+
+4. Excluir Paciente
+INÍCIO
+  RECEBER id_paciente
+  CONECTAR ao banco
+  EXECUTAR DELETE FROM pacientes WHERE id = recebido
+  REDIRECIONAR para listar-pacientes.php
+FIM
+
+5. Cadastrar Consulta
+INÍCIO
+  RECEBER id_paciente, id_medico, data, horário, descrição
+
+  CONECTAR ao banco
+
+  EXECUTAR INSERT na tabela consultas
+
+  SE inserir com sucesso
+        EXIBIR "Consulta cadastrada"
+  SENÃO
+        EXIBIR "Erro ao cadastrar"
+FIM
