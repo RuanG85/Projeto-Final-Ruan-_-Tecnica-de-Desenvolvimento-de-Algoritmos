@@ -1,0 +1,80 @@
+# Sistema de Clínica
+
+def main():
+    print("Menu da Clínica:")
+    print("1 - Pacientes")
+    print("2 - Médicos")
+    print("3 - Consultas")
+
+    modulo = int(input("Escolha uma opção: "))
+
+    if modulo == 1:
+        menu_pacientes()
+
+    if modulo == 2:
+        menu_medicos()
+
+    if modulo == 3:
+        menu_consultas()
+
+
+
+# ------------------- MENU PACIENTES -------------------
+
+def menu_pacientes():
+    print("MENU PACIENTES")
+    print("1 - Cadastrar")
+    print("2 - Listar")
+    print("3 - Editar")
+    print("4 - Excluir")
+
+    opcao = int(input("Escolha uma opção: "))
+
+    if opcao == 1:
+        cadastrar_paciente()
+
+    if opcao == 2:
+        listar_pacientes()
+
+    if opcao == 3:
+        editar_paciente()
+
+    if opcao == 4:
+        excluir_paciente()
+
+
+def cadastrar_paciente():
+    print("Cadastrar Paciente")
+    print("Receber dados do paciente...")
+    print("Executar INSERT na tabela pacientes.")
+
+
+def listar_pacientes():
+    print("Listar Pacientes")
+    print("SELECT * FROM pacientes")
+    print("Exibir cada paciente...")
+
+
+def editar_paciente():
+    print("Editar Paciente")
+    print("Buscar paciente pelo ID...")
+    print("Executar UPDATE com novos dados.")
+
+
+def excluir_paciente():
+    print("Excluir Paciente")
+    print("DELETE pelo ID.")
+    
+
+# ---------------- OUTROS MÓDULOS (APENAS ESTRUTURA) ----------------
+
+def menu_medicos():
+    print("Menu dos Médicos (estrutura semelhante ao de pacientes)")
+
+
+def menu_consultas():
+    print("Menu das Consultas (estrutura semelhante ao de pacientes)")
+
+
+def menu_funcionarios():
+    print("Menu dos Funcionários (estrutura semelhante ao de pacientes)")
