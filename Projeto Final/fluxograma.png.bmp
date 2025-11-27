@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value="CRUD Clínica"/>
+        <attribute name="authors" value="Ruan"/>
+        <attribute name="about" value="Fluxograma do sistema CRUD da Clínica"/>
+        <attribute name="saved" value="2025-11-27 16:50:00"/>
+    </attributes>
+
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+
+            <!-- Declarações -->
+            <declare name="modulo" type="Integer" array="False"/>
+            <declare name="opcao" type="Integer" array="False"/>
+            <declare name="bancoOnline" type="Boolean" array="False"/>
+
+            <!-- Menu principal -->
+            <output expression="&quot;=== SISTEMA DA CLÍNICA ===&quot;" newline="True"/>
+            <output expression="&quot;1 - Pacientes&quot;" newline="True"/>
+            <output expression="&quot;2 - Médicos&quot;" newline="True"/>
+            <output expression="&quot;3 - Consultas&quot;" newline="True"/>
+            <output expression="&quot;4 - Funcionários&quot;" newline="True"/>
+            <output expression="&quot;Escolha o módulo:&quot;" newline="True"/>
+            <input variable="modulo"/>
+
+            <!-- Chama menus -->
+            <if expression="modulo == 1">
+                <then>
+                    <call function="MenuPacientes"/>
+                </then>
+            </if>
+
+            <if expression="modulo == 2">
+                <then>
+                    <call function="MenuMedicos"/>
+                </then>
+            </if>
+
+            <if expression="modulo == 3">
+                <then>
+                    <call function="MenuConsultas"/>
+                </then>
+            </if>
+
+            <if expression="modulo == 4">
+                <then>
+                    <call function="MenuFuncionarios"/>
+                </then>
+            </if>
+
+        </body>
+    </function>
+
+    <!-- ========================== -->
+    <!-- MÉTODO: PACIENTES -->
+    <!-- ========================== -->
+
+    <function name="MenuPacientes" type="None" variable="">
+        <parameters/>
+        <body>
+
+            <output expression="&quot;--- PACIENTES ---&quot;" newline="True"/>
+            <output expression="&quot;1 - Cadastrar&quot;" newline="True"/>
+            <output expression="&quot;2 - Listar&quot;" newline="True"/>
+            <output expression="&quot;3 - Editar&quot;" newline="True"/>
+            <output expression="&quot;4 - Excluir&quot;" newline="True"/>
+            <input variable="opcao"/>
+
+            <if expression="opcao == 1">
+                <then><call function="CadastrarPaciente"/></then>
+            </if>
+
+            <if expression="opcao == 2">
+                <then><call function="ListarPacientes"/></then>
+            </if>
+
+            <if expression="opcao == 3">
+                <then><call function="EditarPaciente"/></then>
+            </if>
+
+            <if expression="opcao == 4">
+                <then><call function="ExcluirPaciente"/></then>
+            </if>
+
+        </body>
+    </function>
+
+    <function name="CadastrarPaciente" type="None" variable="">
+        <parameters/>
+        <body>
+
+            <declare name="nome" type="String"/>
+            <declare name="idade" type="String"/>
+            <declare name="telefone" type="String"/>
+
+            <output expression="&quot;Nome do paciente:&quot;" newline="True"/>
+            <input variable="nome"/>
+
+            <output expression="&quot;Idade:&quot;" newline="True"/>
+            <input variable="idade"/>
+
+            <output expression="&quot;Telefone:&quot;" newline="True"/>
+            <input variable="telefone"/>
+
+            <assign variable="bancoOnline" expression="true"/>
+
+            <if expression="bancoOnline">
+                <then>
+                    <output expression="&quot;INSERT INTO pacientes ...&quot;" newline="True"/>
+                    <output expression="&quot;Paciente cadastrado com sucesso!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Erro ao conectar ao banco!&quot;" newline="True"/>
+                </else>
+            </if>
+
+        </body>
+    </function>
+
+    <function name="ListarPacientes" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;SELECT * FROM pacientes&quot;" newline="True"/>
+            <output expression="&quot;Exibindo lista de pacientes...&quot;" newline="True"/>
+        </body>
+    </function>
+
+    <function name="EditarPaciente" type="None" variable="">
+        <parameters/>
+        <body>
+
+            <declare name="id" type="String"/>
+            <output expression="&quot;ID do paciente para editar:&quot;" newline="True"/>
+            <input variable="id"/>
+
+            <output expression="&quot;UPDATE pacientes SET ... WHERE id=&quot; &amp; id" newline="True"/>
+        </body>
+    </function>
+
+    <function name="ExcluirPaciente" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="id" type="String"/>
+            <output expression="&quot;ID para excluir:&quot;" newline="True"/>
+            <input variable="id"/>
+
+            <output expression="&quot;DELETE FROM pacientes WHERE id=&quot; &amp; id" newline="True"/>
+        </body>
+    </function>
+
+
+    <!-- ==================================== -->
+    <!-- Repete estrutura para Médicos -->
+    <!-- ==================================== -->
+
+    <function name="MenuMedicos" type="None">
+        <parameters/>
+        <body>
+            <output expression="&quot;--- MÉDICOS ---&quot;" newline="True"/>
+            <output expression="&quot;1 - Cadastrar&quot;" newline="True"/>
+            <output expression="&quot;2 - Listar&quot;" newline="True"/>
+            <output expression="&quot;3 - Editar&quot;" newline="True"/>
+            <output expression="&quot;4 - Excluir&quot;" newline="True"/>
+            <input variable="opcao"/>
+
+            <if expression="opcao == 1"><then><output expression="&quot;Cadastrando médico...&quot;" newline="True"/></then></if>
+            <if expression="opcao == 2"><then><output expression="&quot;Listando médicos...&quot;" newline="True"/></then></if>
+            <if expression="opcao == 3"><then><output expression="&quot;Editando médico...&quot;" newline="True"/></then></if>
+            <if expression="opcao == 4"><then><output expression="&quot;Excluindo médico...&quot;" newline="True"/></then></if>
+
+        </body>
+    </function>
+
+    <!-- ==================================== -->
+    <!-- Consultas -->
+    <!-- ==================================== -->
+
+    <function name="MenuConsultas" type="None">
+        <parameters/>
+        <body>
+            <output expression="&quot;--- CONSULTAS ---&quot;" newline="True"/>
+            <output expression="&quot;1 - Cadastrar&quot;" newline="True"/>
+            <output expression="&quot;2 - Listar&quot;" newline="True"/>
+            <output expression="&quot;3 - Editar&quot;" newline="True"/>
+            <output expression="&quot;4 - Excluir&quot;" newline="True"/>
+            <input variable="opcao"/>
+
+            <if expression="opcao == 1"><then><output expression="&quot;Cadastrando consulta...&quot;" newline="True"/></then></if>
+            <if expression="opcao == 2"><then><output expression="&quot;Listando consultas...&quot;" newline="True"/></then></if>
+            <if expression="opcao == 3"><then><output expression="&quot;Editando consulta...&quot;" newline="True"/></then></if>
+            <if expression="opcao == 4"><then><output expression="&quot;Excluindo consulta...&quot;" newline="True"/></then></if>
+
+        </body>
+    </function>
+</flowgorithm>
