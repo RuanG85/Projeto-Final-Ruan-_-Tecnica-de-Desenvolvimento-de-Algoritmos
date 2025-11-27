@@ -1,5 +1,6 @@
 # Projeto-Final-Ruan-_-Tecnica-de-Desenvolvimento-de-Algoritmos
 Projeto Final – Ruan — Técnica de Desenvolvimento de Desenvolvimento de Algoritmos
+
 🏥 Descrição do Projeto
 
 Este projeto consiste no desenvolvimento de um sistema CRUD simples para uma Clínica, utilizando PHP, HTML e MySQL.
@@ -11,29 +12,18 @@ Médicos
 
 Consultas
 
-Funcionários
-
-Agendamentos (dependendo do que você implementou)
-
-Cada módulo segue a estrutura CRUD:
-✔ Criar
-✔ Recuperar/Listar
-✔ Update (editar)
-✔ Delete (excluir)
-
-Este projeto tem como objetivo aplicar o conteúdo estudado na disciplina Técnica de Desenvolvimento de Algoritmos, incluindo lógica, estruturas condicionais, repetição, pseudocódigo e fluxogramas.
 
 🛠 Tecnologias Utilizadas
 
 HTML5
 
-CSS / Bootstrap (se utilizado)
+CSS / Bootstrap
 
-PHP (lógica e rotas do CRUD)
+PHP
 
-MySQL (armazenamento)
+MySQL
 
-XAMPP / Apache (ambiente de execução)
+XAMPP / Apache
 
 phpMyAdmin
 
@@ -65,7 +55,6 @@ Projeto-Final-Ruan/
 │   └── README.md
 
 
-(A estrutura acima deve ser ajustada conforme os arquivos que seu projeto realmente possui.)
 
 ▶️ Como executar o projeto
 
@@ -82,15 +71,9 @@ Acesse o phpMyAdmin e crie o banco:
 
 clinica
 
-
 Importe o arquivo SQL contendo as tabelas.
 
 Abra no navegador:
 
 http://localhost/Projeto-Final-Ruan/
 
-👤 Autor
-
-Ruan G.
-Disciplina: Técnica de Desenvolvimento de Algoritmos
-Projeto Final – CRUD Clínica Médica
